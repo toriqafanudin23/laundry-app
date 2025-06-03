@@ -1,41 +1,19 @@
 package handler
 
 import (
-	"database/sql"
-	"fmt"
+	"laundry-app/connectdb"
 	"laundry-app/entity"
-	"log"
 	"math/rand"
 	"net/http"
-	"os"
 	"time"
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/joho/godotenv"
-
 	_ "github.com/lib/pq"
 )
 
-var psqlInfo string
-
-func init() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
-	host := os.Getenv("DB_HOST")
-	port := os.Getenv("DB_PORT")
-	user := os.Getenv("DB_USER")
-	password := os.Getenv("DB_PASSWORD")
-	dbname := os.Getenv("DB_NAME")
-
-	psqlInfo = fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
-}
-
 func GetAllCustomer(c *gin.Context) {
-	db := connectDb()
+	db := connectdb.ConnectDb()
 	defer db.Close()
 	sorted := c.Param("sorted")
 
@@ -65,7 +43,7 @@ func GetAllCustomer(c *gin.Context) {
 }
 
 func AddCustomer(c *gin.Context) {
-	db := connectDb()
+	db := connectdb.ConnectDb()
 	defer db.Close()
 
 	var s entity.Customer
@@ -92,7 +70,7 @@ func AddCustomer(c *gin.Context) {
 }
 
 func UpdateCustomer(c *gin.Context) {
-	db := connectDb()
+	db := connectdb.ConnectDb()
 	defer db.Close()
 
 	id := c.Param("id")
@@ -116,7 +94,7 @@ func UpdateCustomer(c *gin.Context) {
 }
 
 func DeleteCustomer(c *gin.Context) {
-	db := connectDb()
+	db := connectdb.ConnectDb()
 	defer db.Close()
 	id := c.Param("id")
 
@@ -127,19 +105,4 @@ func DeleteCustomer(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "Succesfully Deleted Customer!"})
-}
-
-func connectDb() *sql.DB {
-	db, err := sql.Open("postgres", psqlInfo)
-	if err != nil {
-		panic(err)
-	}
-
-	err = db.Ping()
-	if err != nil {
-		panic(err)
-	} else {
-		fmt.Println("Succesfully connected!")
-	}
-	return db
 }
