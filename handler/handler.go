@@ -5,6 +5,7 @@ import (
 	"laundry-app/entity"
 	"math/rand"
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -80,8 +81,10 @@ func UpdateCustomer(c *gin.Context) {
 		return
 	}
 
+	s.Customer_id, _ = strconv.Atoi(id)
+	s.Updated_at = time.Now()
 	query := "UPDATE customer SET name = $2, phone = $3, address = $4, updated_at = $5 WHERE customer_id = $1"
-	_, err := db.Exec(query, id, s.Name, s.Phone, s.Address, time.Now())
+	_, err := db.Exec(query, s.Customer_id, s.Name, s.Phone, s.Address, s.Updated_at)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return

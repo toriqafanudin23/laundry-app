@@ -2,7 +2,7 @@ package main
 
 import (
 	"laundry-app/handler"
-
+	"laundry-app/middleware"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -11,10 +11,16 @@ import (
 func main() {
 	r := gin.Default()
 
-	r.GET("/customers/:sorted", handler.GetAllCustomer)
-	r.POST("/customer", handler.AddCustomer)
-	r.PUT("/customer/:id", handler.UpdateCustomer)
-	r.DELETE("/customer/:id", handler.DeleteCustomer)
+	r.POST("/login", handler.Login)
+
+	auth := r.Group("/")
+	auth.Use(middleware.AuthMiddleware)
+	{
+		auth.GET("/customers/:sorted", handler.GetAllCustomer)
+		auth.POST("/customer", handler.AddCustomer)
+		auth.PUT("/customer/:id", handler.UpdateCustomer)
+		auth.DELETE("/customer/:id", handler.DeleteCustomer)
+	}
 
 	port := ":" + os.Getenv("GIN_PORT")
 	r.Run(port)
