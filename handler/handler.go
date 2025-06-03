@@ -58,7 +58,10 @@ func GetAllCustomer(c *gin.Context) {
 		customers = append(customers, s)
 	}
 
-	c.JSON(http.StatusOK, customers)
+	c.JSON(http.StatusOK, gin.H{
+		"data":    customers,
+		"message": "Succesfully Fetch Customers",
+	})
 }
 
 func AddCustomer(c *gin.Context) {
@@ -82,7 +85,10 @@ func AddCustomer(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusCreated, s)
+	c.JSON(http.StatusCreated, gin.H{
+		"data":    s,
+		"message": "Succesfully Insert Data",
+	})
 }
 
 func UpdateCustomer(c *gin.Context) {
@@ -103,7 +109,10 @@ func UpdateCustomer(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, s)
+	c.JSON(http.StatusOK, gin.H{
+		"data":    s,
+		"message": "Succesfully Update Data!",
+	})
 }
 
 func DeleteCustomer(c *gin.Context) {

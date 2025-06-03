@@ -3,6 +3,8 @@ package main
 import (
 	"laundry-app/handler"
 
+	"os"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,5 +16,6 @@ func main() {
 	r.PUT("/customer/:id", handler.UpdateCustomer)
 	r.DELETE("/customer/:id", handler.DeleteCustomer)
 
-	r.Run(":8080")
+	port := ":" + os.Getenv("GIN_PORT")
+	r.Run(port)
 }
