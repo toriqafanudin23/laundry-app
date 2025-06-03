@@ -14,13 +14,11 @@ import (
 var jwtKey []byte
 
 func init() {
-	// Load .env saat init package
 	err := godotenv.Load()
 	if err != nil {
 		log.Println("Warning: .env file not loaded")
 	}
 
-	// Ambil SECRET_KEY dari env
 	secret := os.Getenv("SECRET_KEY")
 	if secret == "" {
 		log.Fatal("SECRET_KEY is not set in environment")
