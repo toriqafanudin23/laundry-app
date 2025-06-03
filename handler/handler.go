@@ -31,20 +31,33 @@ func init() {
 	psqlInfo = fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 }
 
-func GetAllCustomer() []entity.Customer {
+func GetAllCustomer() ([]entity.Customer, error) {
 	db := connectDb()
 	defer db.Close()
 
 	sqlStatement := "SELECT * FROM customer;"
 	rows, err := db.Query(sqlStatement)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer rows.Close()
 
-	customers := scanCustomer(rows)
+	customers := []entity.Customer{}
 
-	return customers
+	for rows.Next() {
+		c := entity.Customer{}
+		err := rows.Scan(&c.Customer_id, &c.Name, &c.Phone, &c.Address, &c.Created_at, &c.Updated_at)
+		if err != nil {
+			return nil, err
+		}
+		customers = append(customers, c)
+	}
+
+	if err = rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return customers, nil
 }
 
 func scanCustomer(rows *sql.Rows) []entity.Customer {

@@ -12,16 +12,26 @@ func main() {
 	r := gin.Default()
 
 	r.GET("/customers", func(c *gin.Context) {
+		customers, err := handler.GetAllCustomer()
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{
+				"error": err.Error(),
+			})
+			return
+		}
+
 		c.JSON(http.StatusOK, gin.H{
-			"data":    handler.GetAllCustomer(),
-			"message": "Succesfully Get Data!",
+			"data":    customers,
+			"message": "Successfully fetched customers",
 		})
 	})
 
 	r.POST("/customers", func(c *gin.Context) {
 		var newCustomer entity.Customer
 		if err := c.BindJSON(&newCustomer); err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": err.Error(),
+			})
 			return
 		}
 
