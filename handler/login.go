@@ -37,7 +37,7 @@ func Login(c *gin.Context) {
 	}
 
 	// Dummy auth, ganti dengan query ke database
-	if credentials.Username != "admin" || credentials.Password != "1234" {
+	if credentials.Username != "avantoriq" || credentials.Password != "F@1sanirbita" {
 		c.JSON(http.StatusUnauthorized, gin.H{"error": "Unauthorized"})
 		return
 	}

@@ -29,10 +29,12 @@ func main() {
 	auth.Use(middleware.AuthMiddleware)
 	{
 		auth.POST("/customer", handler.AddCustomer)
-		auth.PUT("/customer/:id", handler.UpdateCustomer)
-		auth.DELETE("/customer/:id", handler.DeleteCustomer)
-		auth.GET("/customers/:sorted", handler.GetAllCustomer)
+
 	}
+
+	r.PUT("/customer/:id", handler.UpdateCustomer)
+	r.DELETE("/customer/:id", handler.DeleteCustomer)
+	r.GET("/customers/:sorted", handler.GetAllCustomer)
 
 	port := ":" + os.Getenv("GIN_PORT")
 	r.Run(port)
