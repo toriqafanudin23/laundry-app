@@ -1,2 +1,21 @@
-.vscode
+# Binary file
+laundry-app
+
+# Certificate files
+*.pem
+
+# Log files
+*.log
+
+# Backup file
+*.save
+
+# Environment configuration
 .env
+
+# VSCode settings
+.vscode/
+
+# Dependency artifacts (already covered by go.mod and go.sum)
+vendor/
+
