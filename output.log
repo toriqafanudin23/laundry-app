@@ -1,0 +1,31 @@
+nohup: ignoring input
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /login                    --> laundry-app/handler.Login (4 handlers)
+[GIN-debug] POST   /customer                 --> laundry-app/handler.AddCustomer (5 handlers)
+[GIN-debug] PUT    /customer/:id             --> laundry-app/handler.UpdateCustomer (4 handlers)
+[GIN-debug] DELETE /customer/:id             --> laundry-app/handler.DeleteCustomer (4 handlers)
+[GIN-debug] GET    /customers/:sorted        --> laundry-app/handler.GetAllCustomer (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8000
+Succesfully connected!
+[GIN] 2025/06/22 - 03:03:33 | 200 |   15.758489ms |   182.4.100.109 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/22 - 03:03:40 | 200 |   39.296839ms |   182.4.100.109 | DELETE   "/customer/102937"
+Succesfully connected!
+[GIN] 2025/06/22 - 03:03:42 | 200 |   16.166614ms |   182.4.100.109 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/22 - 03:03:45 | 403 |   13.068609ms |   182.4.100.109 | DELETE   "/customer/425753"
+Succesfully connected!
+[GIN] 2025/06/22 - 03:04:04 | 201 |   21.506039ms |   182.4.100.109 | POST     "/customer"
+Succesfully connected!
+[GIN] 2025/06/22 - 03:04:04 | 200 |   12.194757ms |   182.4.100.109 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/22 - 03:04:33 | 201 |   21.789053ms |   182.4.100.109 | POST     "/customer"
+Succesfully connected!
+[GIN] 2025/06/22 - 03:04:33 | 200 |   11.720356ms |   182.4.100.109 | GET      "/customers/name"

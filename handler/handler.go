@@ -3,8 +3,8 @@ package handler
 import (
 	"laundry-app/connectdb"
 	"laundry-app/entity"
-	"math/rand"
 	"net/http"
+	"math/rand"
 	"strconv"
 	"time"
 
@@ -99,13 +99,29 @@ func UpdateCustomer(c *gin.Context) {
 func DeleteCustomer(c *gin.Context) {
 	db := connectdb.ConnectDb()
 	defer db.Close()
+
 	id := c.Param("id")
 
-	_, err := db.Exec("DELETE FROM customer WHERE customer_id = $1", id)
+	// Hitung jumlah data customer
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM customer").Scan(&count)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Gagal menghitung customer: " + err.Error()})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"message": "Succesfully Deleted Customer!"})
+	if count <= 1 {
+		c.JSON(http.StatusForbidden, gin.H{"error": "Tidak bisa menghapus karena hanya tersisa 1 customer di database."})
+		return
+	}
+
+	// Lanjut hapus
+	_, err = db.Exec("DELETE FROM customer WHERE customer_id = $1", id)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Gagal menghapus customer: " + err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "Customer berhasil dihapus."})
 }
+
