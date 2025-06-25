@@ -125,3 +125,80 @@ func DeleteCustomer(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Customer berhasil dihapus."})
 }
 
+func UploadFile(c *gin.Context) {
+	db := connectdb.ConnectDb()
+	defer db.Close()
+
+	var req struct {
+		Filename string `json:"filename"`
+	}
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid JSON"})
+		return
+	}
+
+	query := "INSERT INTO uploaded_files (filename) VALUES ($1);"
+	_, err := db.Exec(query, req.Filename)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Gagal menyimpan ke database"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Nama file berhasil dicatat",
+		"file":    req.Filename,
+	})
+}
+
+func GetUploadedFiles(c *gin.Context) {
+	db := connectdb.ConnectDb()
+	defer db.Close()
+
+	query := "SELECT filename, uploaded_at FROM uploaded_files ORDER BY uploaded_at DESC;"
+	rows, err := db.Query(query)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+	defer rows.Close()
+
+	var files []entity.UploadedFile
+
+	for rows.Next() {
+		var file entity.UploadedFile
+		if err := rows.Scan(&file.Filename, &file.UploadedAt); err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
+		}
+		files = append(files, file)
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"data":    files,
+		"message": "Successfully fetched uploaded files",
+	})
+}
+
+func DeleteFile(c *gin.Context) {
+    db := connectdb.ConnectDb()
+    defer db.Close()
+
+    filename := c.Param("filename")
+    if filename == "" {
+        c.JSON(http.StatusBadRequest, gin.H{"error": "Filename tidak valid"})
+        return
+    }
+
+    // Hapus dari database
+    _, err := db.Exec("DELETE FROM uploaded_files WHERE filename = $1", filename)
+    if err != nil {
+        c.JSON(http.StatusInternalServerError, gin.H{"error": "Gagal hapus dari database"})
+        return
+    }
+
+    // Kembalikan respons sukses
+    c.JSON(http.StatusOK, gin.H{
+        "message":  "Data dihapus dari database. Silakan hapus manual dari Supabase jika perlu.",
+        "filename": filename,
+    })
+}

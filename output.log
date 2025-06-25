@@ -10,22 +10,375 @@ nohup: ignoring input
 [GIN-debug] PUT    /customer/:id             --> laundry-app/handler.UpdateCustomer (4 handlers)
 [GIN-debug] DELETE /customer/:id             --> laundry-app/handler.DeleteCustomer (4 handlers)
 [GIN-debug] GET    /customers/:sorted        --> laundry-app/handler.GetAllCustomer (4 handlers)
+[GIN-debug] POST   /upload                   --> laundry-app/handler.UploadFile (4 handlers)
+[GIN-debug] GET    /uploaded-files           --> laundry-app/handler.GetUploadedFiles (4 handlers)
+[GIN-debug] DELETE /upload/:filename         --> laundry-app/handler.DeleteFile (4 handlers)
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8000
 Succesfully connected!
-[GIN] 2025/06/22 - 03:03:33 | 200 |   15.758489ms |   182.4.100.109 | GET      "/customers/name"
+[GIN] 2025/06/24 - 10:14:19 | 200 |  198.548781ms |   182.4.100.228 | DELETE   "/upload/1750733031339.jpg"
 Succesfully connected!
-[GIN] 2025/06/22 - 03:03:40 | 200 |   39.296839ms |   182.4.100.109 | DELETE   "/customer/102937"
+[GIN] 2025/06/24 - 10:14:21 | 200 |  123.930023ms |   182.4.100.228 | GET      "/uploaded-files"
 Succesfully connected!
-[GIN] 2025/06/22 - 03:03:42 | 200 |   16.166614ms |   182.4.100.109 | GET      "/customers/name"
+[GIN] 2025/06/24 - 10:14:55 | 200 |  232.584814ms |   182.4.100.228 | POST     "/upload"
 Succesfully connected!
-[GIN] 2025/06/22 - 03:03:45 | 403 |   13.068609ms |   182.4.100.109 | DELETE   "/customer/425753"
+[GIN] 2025/06/24 - 10:14:55 | 200 |  117.179789ms |   182.4.100.228 | GET      "/uploaded-files"
 Succesfully connected!
-[GIN] 2025/06/22 - 03:04:04 | 201 |   21.506039ms |   182.4.100.109 | POST     "/customer"
 Succesfully connected!
-[GIN] 2025/06/22 - 03:04:04 | 200 |   12.194757ms |   182.4.100.109 | GET      "/customers/name"
+[GIN] 2025/06/24 - 10:15:55 | 200 |  162.470484ms |   182.4.100.228 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 10:15:55 | 200 |  175.698831ms |   182.4.100.228 | GET      "/customers/name"
 Succesfully connected!
-[GIN] 2025/06/22 - 03:04:33 | 201 |   21.789053ms |   182.4.100.109 | POST     "/customer"
 Succesfully connected!
-[GIN] 2025/06/22 - 03:04:33 | 200 |   11.720356ms |   182.4.100.109 | GET      "/customers/name"
+[GIN] 2025/06/24 - 10:15:55 | 200 |    112.6491ms |   182.4.100.228 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 10:15:55 | 200 |  116.985476ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:17:33 | 200 |  177.666034ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:17:33 | 200 |  227.436193ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:17:33 | 200 |  131.541084ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:17:48 | 200 | 15.141205703s |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 10:19:49 | 204 |     173.649µs |   182.4.100.228 | OPTIONS  "/upload"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:19:49 | 200 |  224.008621ms |   182.4.100.228 | POST     "/upload"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:19:49 | 200 |  124.726356ms |   182.4.100.228 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 10:19:58 | 204 |      93.093µs |   182.4.100.228 | OPTIONS  "/upload/1750735185725.jpg"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:19:58 | 200 |  140.428316ms |   182.4.100.228 | DELETE   "/upload/1750735185725.jpg"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:19:59 | 200 |  128.191649ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:20:22 | 200 |  117.520071ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:20:23 | 200 |  118.826037ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:20:23 | 200 |  124.205355ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:20:28 | 200 |  5.128573737s |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:22:27 | 200 |  354.819331ms |   182.4.100.228 | POST     "/upload"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:22:28 | 200 |   145.54988ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:23:30 | 200 |  165.141614ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:23:31 | 200 |  113.905982ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:23:31 | 200 |  472.258548ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:23:36 | 200 |  5.115246929s |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:23:54 | 200 |  137.314282ms |   182.4.100.228 | POST     "/upload"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:23:54 | 200 |  121.371265ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 10:27:36 | 200 |  158.064116ms |   182.4.100.228 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 10:27:36 | 200 |  178.662467ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 10:27:36 | 200 |  111.234517ms |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 10:27:36 | 200 |  113.681345ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 10:28:53 | 200 |  140.439258ms |   182.4.100.228 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 10:28:53 | 200 |  156.649326ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 10:28:53 | 200 |  128.896445ms |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 10:28:53 | 200 |  123.791041ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 10:29:39 | 200 |  193.148487ms |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 10:29:39 | 200 |  196.094597ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 10:29:39 | 200 |  105.988814ms |   182.4.100.228 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 10:29:39 | 200 |  116.851926ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:31:27 | 200 |  124.893037ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:31:27 | 200 |  125.998532ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:31:27 | 200 |  119.401437ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:31:27 | 200 |  149.753513ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 10:32:21 | 200 |  218.345699ms |   182.4.100.228 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 10:32:21 | 200 |   226.51931ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 10:32:22 | 200 |  1.120537665s |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 10:32:22 | 200 |  1.120444077s |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:33:31 | 200 |  205.795275ms |   182.4.100.228 | POST     "/upload"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:33:31 | 200 |  366.442989ms |   182.4.100.228 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 10:44:02 | 204 |      193.12µs |   182.4.100.228 | OPTIONS  "/upload/1750736007517.jpg"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:44:03 | 200 |  1.241211225s |   182.4.100.228 | DELETE   "/upload/1750736007517.jpg"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:44:05 | 200 |  125.530418ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:44:15 | 200 |  118.839745ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:44:15 | 200 |  125.601077ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:44:15 | 200 |  125.953355ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 10:44:24 | 200 |  8.619975943s |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 10:52:40 | 200 |   298.31514ms |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 10:52:40 | 200 |  255.469116ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 10:53:45 | 200 |  1.825566593s |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 10:53:45 | 200 |  1.840076099s |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 11:02:57 | 200 |  446.896898ms |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 11:02:57 | 200 |  469.827181ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 11:02:58 | 200 |  749.937504ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 11:03:01 | 200 |  3.724494045s |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 11:14:17 | 200 |  153.055237ms |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 11:14:17 | 200 |  175.614007ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 11:14:22 | 200 |  111.750319ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 11:14:22 | 200 |   112.47654ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 11:14:27 | 200 |  114.972785ms |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 11:14:27 | 200 |  116.818602ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 11:14:37 | 200 |  119.451324ms |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 11:14:37 | 200 |  116.716796ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 11:25:46 | 200 |  154.006675ms |   182.4.100.228 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 11:25:46 | 200 |  177.628792ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 11:41:35 | 200 |   260.11806ms |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 11:41:35 | 200 |  274.093488ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 12:00:08 | 200 |  196.795406ms |   182.4.100.228 | POST     "/upload"
+Succesfully connected!
+[GIN] 2025/06/24 - 12:00:08 | 200 |  118.367284ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 12:01:55 | 200 |  120.526116ms |   182.4.100.228 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 12:01:56 | 200 |   573.29034ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 12:33:24 | 200 |  123.241245ms |   62.210.88.112 | GET      "/customers/name"
+[GIN] 2025/06/24 - 12:33:24 | 200 |  137.857331ms |   62.210.88.112 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 12:39:56 | 200 |  570.837502ms |   182.4.100.228 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 12:39:56 | 200 |  1.016673822s |   182.4.100.228 | GET      "/customers/name"
+[GIN] 2025/06/24 - 18:34:33 | 404 |      12.433µs |  217.156.22.214 | GET      "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 19:23:10 | 200 |  190.796963ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 19:23:10 | 200 |  204.216471ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 20:25:56 | 200 |  120.757622ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 20:25:56 | 200 |  1.245399582s |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 20:43:33 | 200 |  171.162213ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 20:43:33 | 200 |  173.600238ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 20:48:00 | 200 |  236.374055ms |  112.78.156.239 | GET      "/customers/name"
+[GIN] 2025/06/24 - 20:48:00 | 200 |  239.092205ms |  112.78.156.239 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 20:54:21 | 200 |  306.291432ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 20:54:21 | 200 |  317.642304ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 20:57:41 | 200 |  128.355804ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 20:57:41 | 200 |  133.024612ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 21:58:46 | 200 |  233.226503ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 21:58:46 | 200 |  200.065514ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 22:30:35 | 200 |  248.911736ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 22:30:35 | 200 |  266.843032ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 22:30:54 | 200 |  109.446191ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 22:30:54 | 200 |  115.624391ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 22:30:54 | 200 |  129.051095ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 22:30:54 | 200 |  137.071035ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 22:41:40 | 200 |  139.201386ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 22:41:40 | 200 |  170.639977ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 22:41:40 | 200 |   114.96195ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 22:41:40 | 200 |  121.202919ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 22:42:41 | 200 |  220.192299ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 22:42:41 | 200 |   245.16888ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 22:42:41 | 200 |  117.547298ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 22:42:41 | 200 |  161.761395ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 22:50:51 | 204 |      228.52µs |   182.4.103.255 | OPTIONS  "/upload/1750735431625.jpg"
+Succesfully connected!
+[GIN] 2025/06/24 - 22:50:51 | 200 |  278.923034ms |   182.4.103.255 | DELETE   "/upload/1750735431625.jpg"
+Succesfully connected!
+[GIN] 2025/06/24 - 22:50:53 | 200 |  134.003064ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 22:58:51 | 204 |     274.893µs |   182.4.103.255 | OPTIONS  "/upload"
+Succesfully connected!
+[GIN] 2025/06/24 - 22:58:51 | 200 |  141.569218ms |   182.4.103.255 | POST     "/upload"
+Succesfully connected!
+[GIN] 2025/06/24 - 22:58:51 | 200 |  109.434952ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:02:14 | 200 |  165.296769ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:07:57 | 200 |  1.214811963s |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 23:07:57 | 200 |  1.221272917s |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:07:58 | 200 |  105.148743ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:07:58 | 200 |  296.662119ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:08:04 | 200 |  114.233944ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 23:08:04 | 200 |  116.476207ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:08:04 | 200 |  112.060057ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 23:08:04 | 200 |  116.172565ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:09:21 | 200 |  152.070809ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 23:09:21 | 200 |  125.656135ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:09:22 | 200 |  108.592645ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:09:22 | 200 |  328.687085ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:09:40 | 200 |  129.337417ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 23:09:40 | 200 |  127.712969ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:09:40 | 200 |  118.915678ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 23:09:40 | 200 |  120.413843ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:10:13 | 200 |  190.650562ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:10:13 | 200 |  263.280237ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:10:13 | 200 |  106.865339ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:10:13 | 200 |  109.411386ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:10:53 | 200 |   157.43147ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 23:10:53 | 200 |  163.972727ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:10:53 | 200 |  111.497266ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:10:53 | 200 |  111.377564ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:17:21 | 200 |    265.4489ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 23:17:21 | 200 |  260.413632ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:17:21 | 200 |  142.103259ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 23:17:21 | 200 |  140.515085ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 23:20:14 | 204 |     214.824µs |   182.4.103.255 | OPTIONS  "/upload/1750780721787.jpg"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:20:14 | 200 |  226.578325ms |   182.4.103.255 | DELETE   "/upload/1750780721787.jpg"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:20:16 | 200 |  116.751948ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:20:46 | 200 |  175.627929ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 23:20:46 | 200 |   171.14244ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:20:46 | 200 |  113.524291ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 23:20:46 | 200 |  110.709084ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:25:13 | 200 |  301.516655ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 23:25:13 | 200 |  305.440608ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:27:37 | 200 |  205.714287ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 23:27:37 | 200 |  218.094982ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:27:37 | 200 |  111.246243ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 23:27:37 | 200 |  133.525798ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:28:37 | 200 |  166.865936ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 23:28:37 | 200 |  169.147724ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:29:25 | 200 |  121.995548ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:29:25 | 200 |  125.578941ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:30:16 | 200 |  226.195813ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 23:30:16 | 200 |  225.440082ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:31:38 | 200 |  405.610363ms |   182.4.103.255 | POST     "/upload"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:31:38 | 200 |  119.705215ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:36:46 | 200 |  183.195141ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 23:36:46 | 200 |  201.356156ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:38:33 | 200 |  222.227697ms |   182.4.103.255 | DELETE   "/upload/1750782692309.jpg"
+Succesfully connected!
+[GIN] 2025/06/24 - 23:38:35 | 200 |  129.848109ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:40:46 | 200 |  195.054891ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 23:40:46 | 200 |  197.415987ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:43:13 | 200 |  286.316926ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/24 - 23:43:13 | 200 |  287.752781ms |   182.4.103.255 | GET      "/uploaded-files"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/24 - 23:55:07 | 200 |  151.831957ms |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/24 - 23:55:07 | 200 |  164.915295ms |   182.4.103.255 | GET      "/customers/name"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/25 - 05:05:33 | 200 |  1.214242498s |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/25 - 05:05:33 | 200 |  1.216849051s |   182.4.103.255 | GET      "/uploaded-files"
+[GIN] 2025/06/25 - 06:10:29 | 404 |      12.605µs |  45.156.128.112 | GET      "/session/properties"
+Succesfully connected!
+Succesfully connected!
+[GIN] 2025/06/25 - 06:52:21 | 200 |  407.294913ms |   182.4.103.255 | GET      "/customers/name"
+[GIN] 2025/06/25 - 06:52:21 | 200 |  411.379039ms |   182.4.103.255 | GET      "/uploaded-files"

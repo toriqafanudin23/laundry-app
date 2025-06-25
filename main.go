@@ -35,7 +35,9 @@ func main() {
 	r.PUT("/customer/:id", handler.UpdateCustomer)
 	r.DELETE("/customer/:id", handler.DeleteCustomer)
 	r.GET("/customers/:sorted", handler.GetAllCustomer)
-
+	r.POST("/upload", handler.UploadFile)
+	r.GET("/uploaded-files", handler.GetUploadedFiles)
+	r.DELETE("/upload/:filename", handler.DeleteFile)
 	port := ":" + os.Getenv("GIN_PORT")
 	r.Run(port)
 }
